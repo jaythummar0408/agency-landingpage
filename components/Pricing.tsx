@@ -13,7 +13,9 @@ const Pricing = () => {
     console.log(`CTA clicked: ${tier} pricing tier`)
     const element = document.getElementById('contact')
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
+      const yOffset = -80 // Account for fixed navbar height
+      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset
+      window.scrollTo({ top: y, behavior: 'smooth' })
     }
   }
 
