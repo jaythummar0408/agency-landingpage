@@ -8,7 +8,9 @@ const Hero = () => {
     console.log(`CTA clicked: Navigate to ${sectionId}`)
     const element = document.getElementById(sectionId)
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
+      const yOffset = -80 // Account for fixed navbar height
+      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset
+      window.scrollTo({ top: y, behavior: 'smooth' })
     }
   }
 
