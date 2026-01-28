@@ -101,7 +101,7 @@ const Pricing = () => {
               transition={{ delay: index * 0.2, duration: 0.5 }}
               className={`relative p-8 rounded-2xl ${
                 tier.highlighted
-                  ? 'bg-blue-600 dark:bg-blue-700 text-white shadow-2xl scale-105 border-2 border-blue-500'
+                  ? 'bg-primary dark:bg-primary-hover text-white shadow-2xl scale-105 border-2 border-primary-light'
                   : 'bg-gray-50 dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700'
               }`}
               data-testid={`pricing-tier-${index}`}
@@ -126,7 +126,7 @@ const Pricing = () => {
                 </h3>
                 <p
                   className={`text-sm ${
-                    tier.highlighted ? 'text-blue-100' : 'text-gray-600 dark:text-gray-400'
+                    tier.highlighted ? 'text-primary/10' : 'text-gray-600 dark:text-gray-400'
                   }`}
                 >
                   {tier.description}
@@ -144,7 +144,7 @@ const Pricing = () => {
                 </div>
                 <div
                   className={`text-sm ${
-                    tier.highlighted ? 'text-blue-100' : 'text-gray-500 dark:text-gray-400'
+                    tier.highlighted ? 'text-primary/10' : 'text-gray-500 dark:text-gray-400'
                   }`}
                 >
                   {tier.period}
@@ -156,12 +156,12 @@ const Pricing = () => {
                   <li key={idx} className="flex items-start">
                     <FaCheck
                       className={`mr-3 mt-1 flex-shrink-0 ${
-                        tier.highlighted ? 'text-blue-200' : 'text-blue-600 dark:text-blue-400'
+                        tier.highlighted ? 'text-primary/20' : 'text-primary dark:text-primary-light'
                       }`}
                     />
                     <span
                       className={`text-sm ${
-                        tier.highlighted ? 'text-blue-50' : 'text-gray-600 dark:text-gray-300'
+                        tier.highlighted ? 'text-primary/5' : 'text-gray-600 dark:text-gray-300'
                       }`}
                     >
                       {feature}
@@ -174,8 +174,8 @@ const Pricing = () => {
                 onClick={() => handleCTAClick(tier.name)}
                 className={`w-full py-3 px-6 rounded-lg font-semibold transition-all duration-300 ${
                   tier.highlighted
-                    ? 'bg-white text-blue-600 hover:bg-blue-50'
-                    : 'bg-blue-600 text-white hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-700'
+                    ? 'bg-white text-primary hover:bg-primary/5'
+                    : 'bg-primary text-white hover:bg-primary-hover dark:bg-primary dark:hover:bg-primary-hover'
                 }`}
                 data-testid={`pricing-tier-cta-${index}`}
               >

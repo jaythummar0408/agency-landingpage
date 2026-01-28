@@ -110,10 +110,10 @@ const Services = () => {
             <motion.div
               key={index}
               variants={itemVariants}
-              className="group p-6 bg-gray-50 dark:bg-gray-800 rounded-xl hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-400"
+              className="group p-6 bg-gray-50 dark:bg-gray-800 rounded-xl hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 hover:border-primary-light dark:hover:border-primary-light"
               data-testid={`service-card-${index}`}
             >
-              <div className="mb-4 text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform duration-300">
+              <div className="mb-4 text-primary dark:text-primary-light group-hover:scale-110 transition-transform duration-300">
                 {service.icon}
               </div>
               <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3"
@@ -129,7 +129,7 @@ const Services = () => {
                     key={idx}
                     className="flex items-start text-sm text-gray-600 dark:text-gray-400"
                   >
-                    <span className="text-blue-600 dark:text-blue-400 mr-2">✓</span>
+                    <span className="text-primary dark:text-primary-light mr-2">✓</span>
                     {feature}
                   </li>
                 ))}

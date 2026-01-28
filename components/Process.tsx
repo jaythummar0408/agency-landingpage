@@ -62,7 +62,7 @@ const Process = () => {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
             {/* Connection Lines (Desktop) */}
-            <div className="hidden lg:block absolute top-20 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 dark:from-blue-400 dark:via-blue-300 dark:to-blue-400" />
+            <div className="hidden lg:block absolute top-20 left-0 right-0 h-0.5 bg-gradient-to-r from-primary via-primary-light to-primary dark:from-primary-light dark:via-blue-300 dark:to-primary-light" />
 
             {steps.map((step, index) => (
               <motion.div
@@ -75,14 +75,14 @@ const Process = () => {
               >
                 {/* Number Badge */}
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
-                  <div className="w-12 h-12 rounded-full bg-blue-600 dark:bg-blue-500 text-white flex items-center justify-center font-bold text-lg shadow-lg">
+                  <div className="w-12 h-12 rounded-full bg-primary dark:bg-primary-light text-white flex items-center justify-center font-bold text-lg shadow-lg">
                     {step.number}
                   </div>
                 </div>
 
                 {/* Card */}
                 <div className="pt-12 p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 h-full hover:shadow-xl transition-shadow duration-300">
-                  <div className="flex justify-center mb-4 text-blue-600 dark:text-blue-400">
+                  <div className="flex justify-center mb-4 text-primary dark:text-primary-light">
                     {step.icon}
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 text-center"

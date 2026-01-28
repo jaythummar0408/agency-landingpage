@@ -93,7 +93,7 @@ const FAQ = () => {
                 <motion.div
                   animate={{ rotate: openIndex === index ? 180 : 0 }}
                   transition={{ duration: 0.3 }}
-                  className="text-blue-600 dark:text-blue-400 flex-shrink-0"
+                  className="text-primary dark:text-primary-light flex-shrink-0"
                 >
                   <FaChevronDown />
                 </motion.div>
