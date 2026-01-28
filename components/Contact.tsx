@@ -233,11 +233,11 @@ const Contact = () => {
                       data-testid="contact-select-budget"
                     >
                       <option value="">Select your budget range</option>
-                      <option value="under-2500">Under €2,500</option>
-                      <option value="2500-5000">€2,500 - €5,000</option>
-                      <option value="5000-10000">€5,000 - €10,000</option>
-                      <option value="10000-20000">€10,000 - €20,000</option>
-                      <option value="20000-plus">€20,000+</option>
+                      <option value="under-2500">Under $2,500</option>
+                      <option value="2500-5000">$2,500 - $5,000</option>
+                      <option value="5000-10000">$5,000 - $10,000</option>
+                      <option value="10000-20000">$10,000 - $20,000</option>
+                      <option value="20000-plus">$20,000+</option>
                     </Field>
                     <ErrorMessage
                       name="budget"
