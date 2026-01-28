@@ -22,7 +22,7 @@ const Pricing = () => {
   const tiers = [
     {
       name: 'Starter',
-      price: '€2,500',
+      price: '$2,500',
       period: 'per project',
       description: 'Perfect for small projects and startups',
       features: [
@@ -37,7 +37,7 @@ const Pricing = () => {
     },
     {
       name: 'Growth',
-      price: '€7,500',
+      price: '$7,500',
       period: 'per project',
       description: 'Ideal for growing businesses',
       features: [
@@ -54,7 +54,7 @@ const Pricing = () => {
     },
     {
       name: 'Custom',
-      price: 'From €15,000',
+      price: 'From $15,000',
       period: 'tailored to you',
       description: 'Enterprise solutions with full customization',
       features: [
