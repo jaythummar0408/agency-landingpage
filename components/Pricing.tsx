@@ -73,10 +73,16 @@ const Pricing = () => {
     <section
       id="pricing"
       ref={ref}
-      className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900"
+      className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800 overflow-hidden"
       data-testid="pricing-section"
     >
-      <div className="container mx-auto">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-30 dark:opacity-10">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="container mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -101,8 +107,8 @@ const Pricing = () => {
               transition={{ delay: index * 0.2, duration: 0.5 }}
               className={`relative p-8 rounded-2xl ${
                 tier.highlighted
-                  ? 'bg-primary dark:bg-primary-hover text-white shadow-2xl scale-105 border-2 border-primary-light'
-                  : 'bg-gray-50 dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700'
+                  ? 'bg-primary text-white shadow-2xl scale-105 border-2 border-primary-light'
+                  : 'bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700'
               }`}
               data-testid={`pricing-tier-${index}`}
             >
@@ -126,7 +132,7 @@ const Pricing = () => {
                 </h3>
                 <p
                   className={`text-sm ${
-                    tier.highlighted ? 'text-primary/10' : 'text-gray-600 dark:text-gray-400'
+                    tier.highlighted ? 'text-white/90' : 'text-gray-600 dark:text-gray-400'
                   }`}
                 >
                   {tier.description}
@@ -144,7 +150,7 @@ const Pricing = () => {
                 </div>
                 <div
                   className={`text-sm ${
-                    tier.highlighted ? 'text-primary/10' : 'text-gray-500 dark:text-gray-400'
+                    tier.highlighted ? 'text-white/80' : 'text-gray-500 dark:text-gray-400'
                   }`}
                 >
                   {tier.period}
@@ -156,12 +162,12 @@ const Pricing = () => {
                   <li key={idx} className="flex items-start">
                     <FaCheck
                       className={`mr-3 mt-1 flex-shrink-0 ${
-                        tier.highlighted ? 'text-primary/20' : 'text-primary dark:text-primary-light'
+                        tier.highlighted ? 'text-white/90' : 'text-primary dark:text-primary-light'
                       }`}
                     />
                     <span
                       className={`text-sm ${
-                        tier.highlighted ? 'text-primary/5' : 'text-gray-600 dark:text-gray-300'
+                        tier.highlighted ? 'text-white/90' : 'text-gray-600 dark:text-gray-300'
                       }`}
                     >
                       {feature}
@@ -174,7 +180,7 @@ const Pricing = () => {
                 onClick={() => handleCTAClick(tier.name)}
                 className={`w-full py-3 px-6 rounded-lg font-semibold transition-all duration-300 ${
                   tier.highlighted
-                    ? 'bg-white text-primary hover:bg-primary/5'
+                    ? 'bg-white text-primary hover:bg-gray-100'
                     : 'bg-primary text-white hover:bg-primary-hover dark:bg-primary dark:hover:bg-primary-hover'
                 }`}
                 data-testid={`pricing-tier-cta-${index}`}

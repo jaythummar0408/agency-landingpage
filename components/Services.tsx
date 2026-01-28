@@ -81,10 +81,16 @@ const Services = () => {
     <section
       id="services"
       ref={ref}
-      className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900"
+      className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white via-gray-50 to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-hidden"
       data-testid="services-section"
     >
-      <div className="container mx-auto">
+      {/* Background Shapes */}
+      <div className="absolute inset-0 opacity-20 dark:opacity-10">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="container mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -110,7 +116,7 @@ const Services = () => {
             <motion.div
               key={index}
               variants={itemVariants}
-              className="group p-6 bg-gray-50 dark:bg-gray-800 rounded-xl hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 hover:border-primary-light dark:hover:border-primary-light"
+              className="group p-6 bg-white dark:bg-gray-800 rounded-xl hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 hover:border-primary dark:hover:border-primary-light"
               data-testid={`service-card-${index}`}
             >
               <div className="mb-4 text-primary dark:text-primary-light group-hover:scale-110 transition-transform duration-300">
