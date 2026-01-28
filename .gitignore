@@ -1,13 +1,66 @@
+# =========================
+# Environment files
+# =========================
+.env
+.env.*
+!.env.example
 
--e 
-# Environment files
-*.env
-*.env.*
--e 
-# Environment files
-*.env
-*.env.*
--e 
-# Environment files
-*.env
-*.env.*
+# =========================
+# Node / Package managers
+# =========================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# =========================
+# Next.js
+# =========================
+.next/
+out/
+.vercel/
+
+# =========================
+# Build outputs
+# =========================
+dist/
+build/
+
+# =========================
+# Logs
+# =========================
+logs/
+*.log
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Editor / IDE
+# =========================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# =========================
+# Cache
+# =========================
+.cache/
+.eslintcache
+
+# =========================
+# Coverage / Tests
+# =========================
+coverage/
+
+# =========================
+# Misc
+# =========================
+*.tgz
+*.pid
+*.seed
