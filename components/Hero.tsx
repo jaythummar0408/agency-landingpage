@@ -15,10 +15,26 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-center pt-20 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800"
+      className="relative min-h-screen flex items-center justify-center pt-20 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden"
       data-testid="hero-section"
     >
-      <div className="container mx-auto">
+      {/* Background Video */}
+      <div className="absolute inset-0 z-0">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover opacity-20 dark:opacity-10"
+        >
+          <source src="https://videos.pexels.com/video-files/3130284/3130284-uhd_2560_1440_30fps.mp4" type="video/mp4" />
+        </video>
+        {/* Overlay gradient */}
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-50/95 via-white/90 to-white dark:from-gray-900/95 dark:via-gray-900/90 dark:to-gray-800"></div>
+      </div>
+
+      {/* Content */}
+      <div className="container mx-auto relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Animated Icon */}
           <motion.div
@@ -27,8 +43,8 @@ const Hero = () => {
             transition={{ duration: 0.5 }}
             className="mb-8 flex justify-center"
           >
-            <div className="p-4 bg-blue-100 dark:bg-blue-900/30 rounded-full">
-              <FaRocket className="text-5xl text-blue-600 dark:text-blue-400" />
+            <div className="p-4 bg-primary/10 dark:bg-primary/20 rounded-full">
+              <FaRocket className="text-5xl text-primary dark:text-primary-light" />
             </div>
           </motion.div>
 
@@ -41,7 +57,7 @@ const Hero = () => {
             data-testid="hero-headline"
           >
             Custom software solutions,{' '}
-            <span className="text-blue-600 dark:text-blue-400">
+            <span className="text-primary dark:text-primary-light">
               built fast and done right
             </span>
           </motion.h1>
@@ -68,7 +84,7 @@ const Hero = () => {
           >
             <button
               onClick={() => scrollToSection('contact')}
-              className="group px-8 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl flex items-center space-x-2"
+              className="group w-full sm:w-auto px-6 py-3 sm:px-8 sm:py-4 bg-primary text-white rounded-lg hover:bg-primary-hover transition-all duration-300 font-semibold text-base sm:text-lg shadow-lg hover:shadow-xl flex items-center justify-center space-x-2"
               data-testid="hero-cta-primary"
             >
               <span>Book a call</span>
@@ -76,7 +92,7 @@ const Hero = () => {
             </button>
             <button
               onClick={() => scrollToSection('services')}
-              className="px-8 py-4 bg-white dark:bg-gray-800 text-gray-900 dark:text-white border-2 border-gray-300 dark:border-gray-600 rounded-lg hover:border-blue-600 dark:hover:border-blue-400 transition-all duration-300 font-semibold text-lg"
+              className="w-full sm:w-auto px-6 py-3 sm:px-8 sm:py-4 bg-white dark:bg-gray-800 text-gray-900 dark:text-white border-2 border-gray-300 dark:border-gray-600 rounded-lg hover:border-primary dark:hover:border-primary-light transition-all duration-300 font-semibold text-base sm:text-lg"
               data-testid="hero-cta-secondary"
             >
               Learn more
@@ -88,7 +104,7 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8, duration: 0.6 }}
-            className="mt-16 flex flex-wrap justify-center gap-8 text-sm text-gray-500 dark:text-gray-400"
+            className="mt-12 sm:mt-16 flex flex-wrap justify-center gap-6 sm:gap-8 text-sm text-gray-500 dark:text-gray-400"
           >
             <div className="flex items-center space-x-2">
               <div className="w-2 h-2 bg-green-500 rounded-full"></div>
