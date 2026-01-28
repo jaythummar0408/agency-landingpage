@@ -55,7 +55,7 @@ const Navigation = () => {
           >
             <a
               href="#"
-              className="text-2xl font-bold text-gray-900 dark:text-white"
+              className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white"
               data-testid="logo"
             >
               Aurora Studio
@@ -63,7 +63,7 @@ const Navigation = () => {
           </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
             {navLinks.map((link, index) => (
               <motion.button
                 key={link.id}
@@ -71,7 +71,7 @@ const Navigation = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
                 onClick={() => scrollToSection(link.id)}
-                className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium"
+                className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors font-medium text-sm xl:text-base"
                 data-testid={`nav-link-${link.id}`}
               >
                 {link.name}
@@ -86,7 +86,7 @@ const Navigation = () => {
                 aria-label="Toggle theme"
                 data-testid="theme-toggle"
               >
-                {theme === 'dark' ? <FaSun size={18} /> : <FaMoon size={18} />}
+                {theme === 'dark' ? <FaSun size={16} /> : <FaMoon size={16} />}
               </button>
             )}
 
@@ -96,11 +96,40 @@ const Navigation = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
               onClick={() => scrollToSection('contact')}
-              className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
+              className="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-hover transition-colors font-medium text-sm xl:text-base whitespace-nowrap"
               data-testid="nav-cta-book-call"
             >
               Book a call
             </motion.button>
+          </div>
+
+          {/* Tablet Navigation (between md and lg) */}
+          <div className="hidden md:flex lg:hidden items-center space-x-3">
+            {mounted && (
+              <button
+                onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300"
+                aria-label="Toggle theme"
+                data-testid="theme-toggle-tablet"
+              >
+                {theme === 'dark' ? <FaSun size={16} /> : <FaMoon size={16} />}
+              </button>
+            )}
+            <button
+              onClick={() => scrollToSection('contact')}
+              className="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-hover transition-colors font-medium text-sm"
+              data-testid="nav-cta-tablet"
+            >
+              Book a call
+            </button>
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="p-2 text-gray-700 dark:text-gray-300"
+              aria-label="Toggle menu"
+              data-testid="tablet-menu-button"
+            >
+              {isMobileMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -112,7 +141,7 @@ const Navigation = () => {
                 aria-label="Toggle theme"
                 data-testid="mobile-theme-toggle"
               >
-                {theme === 'dark' ? <FaSun size={18} /> : <FaMoon size={18} />}
+                {theme === 'dark' ? <FaSun size={16} /> : <FaMoon size={16} />}
               </button>
             )}
             <button
@@ -134,7 +163,7 @@ const Navigation = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800"
+            className="lg:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800"
             data-testid="mobile-menu"
           >
             <div className="container mx-auto px-4 py-4 space-y-3">
@@ -142,7 +171,7 @@ const Navigation = () => {
                 <button
                   key={link.id}
                   onClick={() => scrollToSection(link.id)}
-                  className="block w-full text-left py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium"
+                  className="block w-full text-left py-2 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors font-medium"
                   data-testid={`mobile-nav-link-${link.id}`}
                 >
                   {link.name}
@@ -150,7 +179,7 @@ const Navigation = () => {
               ))}
               <button
                 onClick={() => scrollToSection('contact')}
-                className="block w-full px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium text-center"
+                className="block w-full px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary-hover transition-colors font-medium text-center"
                 data-testid="mobile-cta-book-call"
               >
                 Book a call

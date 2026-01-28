@@ -13,28 +13,28 @@ const Footer = () => {
   ]
 
   return (
-    <footer className="bg-gray-900 dark:bg-black text-gray-300 py-12 px-4 sm:px-6 lg:px-8"
+    <footer className="bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 py-12 px-4 sm:px-6 lg:px-8"
             data-testid="footer">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Brand */}
           <div>
-            <h3 className="text-2xl font-bold text-white mb-2" data-testid="footer-brand">
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2" data-testid="footer-brand">
               Aurora Studio
             </h3>
-            <p className="text-gray-400 text-sm" data-testid="footer-tagline">
+            <p className="text-gray-600 dark:text-gray-400 text-sm" data-testid="footer-tagline">
               Custom software solutions, built fast and done right.
             </p>
           </div>
 
           {/* Links */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Legal</h4>
+            <h4 className="text-gray-900 dark:text-white font-semibold mb-4">Legal</h4>
             <ul className="space-y-2">
               <li>
                 <a
                   href="#privacy"
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
+                  className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light transition-colors text-sm"
                   data-testid="footer-link-privacy"
                 >
                   Privacy Policy
@@ -43,7 +43,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#terms"
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
+                  className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light transition-colors text-sm"
                   data-testid="footer-link-terms"
                 >
                   Terms of Service
@@ -54,14 +54,14 @@ const Footer = () => {
 
           {/* Social */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Follow Us</h4>
+            <h4 className="text-gray-900 dark:text-white font-semibold mb-4">Follow Us</h4>
             <div className="flex space-x-4">
               {socialLinks.map((link, index) => (
                 <a
                   key={index}
                   href={link.href}
                   aria-label={link.label}
-                  className="text-gray-400 hover:text-white transition-colors text-xl"
+                  className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light transition-colors text-xl"
                   data-testid={`footer-social-${link.label.toLowerCase()}`}
                 >
                   {link.icon}
@@ -72,7 +72,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-gray-800 text-center text-sm text-gray-400">
+        <div className="pt-8 border-t border-gray-300 dark:border-gray-700 text-center text-sm text-gray-600 dark:text-gray-400">
           <p data-testid="footer-copyright">
             &copy; {currentYear} Aurora Studio. All rights reserved.
           </p>
